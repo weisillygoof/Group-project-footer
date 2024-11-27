@@ -25,15 +25,27 @@ footer img {
   height: 150px;
 }
 
+.footerrectanglecontainer img {
+  grid-row: auto;
+  width: auto; 
+  max-height: 140px; 
+  object-fit: initial; 
+}
+
+.footerrectanglecontainer p{
+
+}
+
 .footer-contact,
 .footer-email,
 .footer-copyright {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 23px;
+  font-size: 110%;
   color: #484848;
   transform: translateY(-10px);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
 }
 
 /* Here ends the footer saga */
