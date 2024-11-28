@@ -1,6 +1,15 @@
 /* Here starts the footer saga */
+
+@font-face {
+  font-family: 'Kokoro';
+  src: url('/images/Fonts/Kokoro-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  
+}
 footer {
   position: fixed;
+  font-family: 'Kokoro';
   bottom: 0;
   width: 100%;
   display: grid;
@@ -8,44 +17,73 @@ footer {
   grid-template-columns: 1fr;
 }
 
-footer img {
+.footerglodeimg {
   grid-row: 1;
   width: 100%;
-  max-height: 150px;
+  max-height: 80px;
   object-fit: contain;
-  margin-bottom: 40px;
+  margin-bottom: 2vh;
 }
 
 .footerrectanglecontainer {
   grid-row: 2;
   display: grid;
-  object-fit: cover;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  align-items: center; 
+  justify-items: center; 
   background-color: #d9d9d9;
-  height: 150px;
+  height: 90px;
+  padding: 0 3vw; 
+  overflow-x: hidden;
+
 }
 
 .footerrectanglecontainer img {
-  grid-row: auto;
-  width: auto; 
-  max-height: 140px; 
-  object-fit: initial; 
-}
-
-.footerrectanglecontainer p{
+  width: 100%;
+  max-height: 100px; 
+  object-fit: contain;
 
 }
 
 .footer-contact,
 .footer-email,
 .footer-copyright {
+  text-align: center; /* Center text */
+  font-size: clamp(0.9rem, 1.2vw, 1.8rem); /* Scalable font size */
+  color: #555454;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  font-size: 110%;
-  color: #484848;
-  transform: translateY(-10px);
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-}
+  line-height: 1.4;
+  padding: 0 5px;
+  max-width: 100%; /* Ensure the text does not exceed the container width */
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden;
+  }
 
+
+
+  @media screen and (max-width: 600px) {
+
+    .footerrectanglecontainer img {
+      display: none;
+    }
+    
+    .footerrectanglecontainer {
+      grid-template-columns: 1fr;
+      grid-row-gap: 10px;
+      flex-direction: column;
+      align-items: center;
+      grid-row-gap: 1px;
+    }
+  
+    .footer-contact,
+    .footer-email,
+    .footer-copyright {
+      font-family: 'Kokoro';
+      font-size: clamp(0.75rem, 1vw, 1.4rem); 
+      white-space: nowrap; 
+    }
+  }
 /* Here ends the footer saga */
